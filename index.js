@@ -66,10 +66,12 @@ app.get("/", (req, res) => {
     title: "login",
     errorMessages,
   });
+  errorMessages = "";
 });
 
 app.get("/signup", (req, res) => {
   res.render("signup.ejs", { title: "Sign Up", errorMessages });
+  errorMessages = "";
 });
 
 app.get("/home", isLoggedIn, (req, res) => {
