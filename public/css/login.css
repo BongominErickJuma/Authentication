@@ -63,4 +63,7 @@ input:valid ~ label {
     border: none !important;
     box-shadow: none !important;
   }
+  .position-absolute {
+    bottom: 2rem !important;
+  }
 }
