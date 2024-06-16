@@ -52,3 +52,15 @@ input:valid ~ label {
   left: 0;
   font-size: 0.75rem;
 }
+
+/* media query */
+
+@media screen and (max-width: 600px) {
+  .login-box {
+    width: 100%;
+    background-color: transparent !important;
+    border-radius: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
