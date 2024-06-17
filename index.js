@@ -6,11 +6,19 @@ import env from "dotenv";
 import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
-
+import cors from "cors";
 const app = express();
 const port = 3000;
 const saltRounds = 10;
 env.config();
+
+// Configure CORS
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 
 app.use(
   session({
@@ -37,11 +45,11 @@ db.connect();
 
 const createAuthenticationTable = `
     CREATE TABLE IF NOT EXISTS authentication (
-	id serial primary key,
-	username varchar(255),
-	email varchar(255),
-	phone varchar(255),
-	password varchar(255)
+  id serial primary key,
+  username varchar(255),
+  email varchar(255),
+  phone varchar(255),
+  password varchar(255)
     );
 `;
 db.query(createAuthenticationTable, (err) => {
